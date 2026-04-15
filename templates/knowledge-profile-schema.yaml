@@ -1,0 +1,90 @@
+# Knowledge Profile Schema — 知识基线特性画像固定模式
+# 所有自动生成的特性画像必须遵循此 schema
+# 版本: 1.0.1
+
+# ====== 特性基本信息 ======
+feature:
+  name: ""                    # 特性中文名称，如 "UART串口通信"
+  id: ""                      # 特性英文标识，如 "uart"（小写，下划线分隔）
+  category: ""                # 所属类别，如 "通信总线"
+  description: ""             # 一句话描述
+
+# ====== 检测状态 ======
+detection:
+  status: ""                  # detected / suspected / not_detected
+  confidence: ""              # high / low / none
+  keywords_matched: []        # 命中的关键词列表
+  keywords_count: 0           # 关键词命中次数
+
+# ====== 源文件清单 ======
+source_files:
+  drivers: []                 # 驱动层文件列表，如 ["uart_driver.c"]
+  headers: []                 # 头文件列表
+  middleware: []              # 中间件文件（如有）
+  application: []             # 应用层文件（如有）
+  configs: []                 # 配置文件列表
+  tests: []                   # 已有测试文件列表
+
+# ====== 公开函数接口 ======
+functions:
+  public_api:                 # 公开 API 列表
+    - name: ""                # 函数名
+      params: []              # 参数列表，如 ["uint8_t *data", "uint32_t len"]
+      return: ""              # 返回类型
+      description: ""         # 功能描述
+  interrupt_handlers: []      # 中断处理函数
+    # - name: ""
+    #   description: ""
+  internal_key_functions: []  # 内部关键函数（可选）
+    # - name: ""
+    #   description: ""
+
+# ====== 配置项 ======
+config_items:
+  - name: ""                  # 配置项名称，如 "UART_BAUDRATE"
+    type: ""                  # 数据类型，如 "uint32_t"
+    default: null             # 默认值
+    range: []                 # 有效范围，如 [9600, 921600]；枚举值用列表表示
+    impact: []                # 影响描述列表
+
+# ====== 平台支持 ======
+platform_support:
+  M0: false
+  M3: false
+  M4: false
+  A: false
+  A7: false
+  RTOS_A7: false
+  HI1230: false
+  multi_core: false
+
+# ====== 依赖关系 ======
+dependencies:
+  requires: []                # 依赖的其他特性，如 ["GPIO", "DMA"]
+  used_by: []                 # 被哪些模块使用
+  shared_resources: []        # 共享资源
+    # - resource: ""          # 资源名称，如 "DMA_CH3"
+    #   conflict_with: []     # 冲突的其他特性
+
+# ====== 测试关注点 ======
+test_concerns:
+  critical: []                # 关键测试点（必测）
+  common: []                  # 常规测试点
+  platform_specific: {}       # 平台特定测试点，按平台名分组
+    # M3: []
+    # A7: []
+
+# ====== 代码度量 ======
+code_metrics:
+  loc: 0                      # 代码行数
+  functions_count: 0          # 函数数量
+  complexity: ""              # 复杂度评估: low / medium / high / none
+  last_modified: ""           # 最后修改日期，如 "2024-01-15"
+
+# ====== 元数据 ======
+metadata:
+  schema_version: "1.0.1"
+  generated_at: ""            # 生成时间
+  generated_by: "escp_feature_scanner"
+  source_project: ""          # 源项目路径
+  scan_type: ""               # full / incremental

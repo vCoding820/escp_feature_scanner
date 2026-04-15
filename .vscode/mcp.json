@@ -1,0 +1,12 @@
+{
+    "servers": {
+        "ikun-mcp": {
+            "type": "stdio",
+            "command": "c:/Users/Administrator/.vscode/extensions/ikun-chat.ikun-chat-1.4.0/mcp/mcp_server.exe",
+            "args": [],
+            "env": {
+                "IKUN_LOCK_FILE": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\.ikun-chat-9cc59415.lock"
+            }
+        }
+    }
+}
